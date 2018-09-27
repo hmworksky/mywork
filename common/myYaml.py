@@ -6,4 +6,5 @@ class MyYaml(object):
         self.path = path
         self.filename = filename
 
-    def read(self):
+    def read(self,keys):
+        data = yaml.load()

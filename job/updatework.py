@@ -12,4 +12,4 @@ os.system(commit_str)
 time.sleep(2)
 os.system('git push origin master')
 with open('work_update.log','a+',encoding='utf-8') as f:
-    f.write(str(datetime.datetime.now()))
+    f.write(str(datetime.datetime.now())+'\n')
