@@ -1,0 +1,22 @@
+dev:
+    host:
+        ''
+    username:
+        ''
+    passwd:
+        ''
+    charset:
+        'UTF8'
+    port:
+        3306
+test:
+    host:
+        ''
+    username:
+        ''
+    passwd:
+        ''
+    charset:
+        'UTF8'
+    port:
+        3306
