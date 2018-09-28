@@ -1,7 +1,7 @@
 from socketIO_client import SocketIO
 
 
-class mySock(object):
+class mySockIo(object):
     def __init__(self,host,port,router):
         self.sock = SocketIO(host,port)
         self.sock.on(router,self.on_message)
