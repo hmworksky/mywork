@@ -1,24 +1,21 @@
-#1,2,100
-#3,4,5
-#3,2,100
-#1,4,5
-def jian(num1,num2):
-    return num1-num2
-def num(a,b):
-    print(a)
-    print(type(a))
-    data = 0
-    for i in range(len(a)):
-        data = jian(a[i],b[i]+data)
-        if data>=0:
-            a[i],b[i] =  b[i],a[i]
-            print()
-        print(data)
-    print('a:',a)
-    print('b:', b)
-    print(sum(a)-sum(b))
+
+def num(data):
+    data = sorted(data)
+    length = len(data) /2
+    list1 = []
+    list2 = []
+    while data:
+        if sum(list1) > sum(list2) and len(list2) < length:
+            list2.append(data.pop())
+        else:
+            if len(list1) < length:
+                list1.append(data.pop())
+            else:
+                list2.append(data.pop())
+
 
 if __name__ == '__main__':
-    data1 = [1,2,3]
-    data2 = [4,5,100]
-    num(data1,data2)
+    a = [1,2,3,4,5,100]
+    b = [1,2,3,4,11,12,13,14]
+    print(sorted(a))
+    num(b)
