@@ -21,6 +21,7 @@ def num(list1,list2):
             if index:
                 list1.append(data.pop(0))
             else:
+                #判断列表2是否已经满足长度了
                 if len(list2) == length:
                     list1.append(data.pop())
                 else:
@@ -31,6 +32,7 @@ def num(list1,list2):
                 if index:
                     list2.append(data.pop(0))
                 else:
+                    # 判断列表1是否已经满足长度了
                     if len(list1) == length:
                         list2.append(data.pop())
                     else:
