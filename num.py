@@ -1,20 +1,27 @@
 import time
 def num(list1,list2):
+    # 获取每个列表需要填充的长度
+    length = len(list1)
+    #统计开始时间
     start = time.time()
-    #2个列表合并
+
+    #2个列表合并得到一个新列表
     data = list1 + list2
+
     #先排序一次
     data = sorted(data)
-    #获取每个列表需要填充的长度
-    length = len(data) /2
+
+    #准备2个空列表准备接收数据
     list1 = []
     list2 = []
-    #先取一个最大的
+
+    #先从新列表中取一个最大的
     if not list1:
         list1.append(data.pop())
 
     #看看有没有小于0 而且绝对值大于差值的，如果有则加到大的数据列表
     index =  min(data) <0 and abs(min(data)) >= abs(sum(list1) - sum(list2))
+
     while data:
         #判断2个列表大小，第一次进来list1肯定大于list2，所以看看差值的判断，加上长度的校验
         if sum(list1) > sum(list2)  and len(list1) < length:
@@ -44,15 +51,15 @@ def num(list1,list2):
     print('list1:',list1)
     print('list2:', list2)
     print('sum:', sum(list1)-sum(list2))
-    print('time:',time.time()-start)
+    #计算总共耗时
+    print('used_time:',time.time()-start)
     return
 
 if __name__ == '__main__':
     case_1 = list(range(10,10000))
     case_11 = list(range(1000,30000))
     num(case_1,case_11)
-    # datas = a.pop(-1)
-    # print(datas)
+
     list1 = [11,12,13]
     list2 = [1,2,3]
     num(list1,list2)
