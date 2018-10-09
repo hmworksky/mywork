@@ -7,4 +7,5 @@ class MyYaml(object):
         self.filename = filename
 
     def read(self,keys):
-        data = yaml.load()
+        data = yaml.load('../../config/')
+        return data
