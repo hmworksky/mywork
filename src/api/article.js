@@ -39,3 +39,11 @@ export function updateArticle(data) {
     data
   })
 }
+
+export function gameInfoList(query) {
+  return request({
+    url: 'http://127.0.0.1/game',
+    method: 'get',
+    params: {query}
+  })
+}

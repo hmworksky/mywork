@@ -51,21 +51,21 @@
 
       <el-table-column label="游戏名称" min-width="150px" align="center">
         <template slot-scope="scope">
-          <span class="link-type" @click="handleUpdate(scope.row)">{{ scope.row.title }}</span>
-          <el-tag>{{ scope.row.type | typeFilter }}</el-tag>
+          <span class="link-type" @click="handleUpdate(scope.row)">{{ scope.row.name }}</span>
+          <el-tag>{{ scope.row.game_type | typeFilter }}</el-tag>
         </template>
       </el-table-column>
 
       // 游戏ID
       <el-table-column label="gameId" width="110px" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.gameId }}</span>
+          <span>{{ scope.row.game_num }}</span>
         </template>
       </el-table-column>
 
       <el-table-column label="环境" width="80px">
         <template slot-scope="scope">
-          <span>{{ scope.row.env }}</span>
+          <span>{{ scope.row.environment }}</span>
         </template>
       </el-table-column>
 
@@ -152,10 +152,11 @@
 </template>
 
 <script>
-import { fetchList, fetchPv, createArticle, updateArticle } from '@/api/article'
+import { GameInfoList, fetchPv, createArticle, updateArticle } from '@/api/article'
 import waves from '@/directive/waves' // Waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
+import axios from 'axios'
 
 const calendarTypeOptions = [
   { key: 'platform', display_name: '平台' },
@@ -239,17 +240,34 @@ export default {
     this.getList()
   },
   methods: {
+    // getList() {
+    //   this.listLoading = true
+    //   // GameInfoList(this.listQuery).then(response => {
+    //   //   this.list = response.data.results
+    //   //   this.total = response.data.count
+    //   axios.get('http://127.0.0.1:8000/game/')
+    //     .then(response =>{
+    //       this.list = response.data.results
+    //       this.total = response.data.count
+    //
+    //     // Just to simulate the time of the request
+    //     setTimeout(() => {
+    //       this.listLoading = false
+    //     }, 1.5 * 1000)
+    //   })
+    // },
     getList() {
       this.listLoading = true
-      fetchList(this.listQuery).then(response => {
-        this.list = response.data.items
-        this.total = response.data.total
-
-        // Just to simulate the time of the request
-        setTimeout(() => {
-          this.listLoading = false
-        }, 1.5 * 1000)
-      })
+      axios.get('http://127.0.0.1:8000/game/').then(response => {
+        console.log(response)
+        const items = response.data.results
+        this.list = items.map(v => {
+          this.$set(v, 'edit', false) // https://vuejs.org/v2/guide/reactivity.html
+          v.originalTitle = v.title //  will be used when user click the cancel botton
+          return v
+        })
+        this.listLoading = false
+      }).catch(error => console.log(error))
     },
     handleFilter() {
       this.listQuery.page = 1
