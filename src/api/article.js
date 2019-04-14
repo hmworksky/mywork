@@ -42,8 +42,11 @@ export function updateArticle(data) {
 
 export function gameInfoList(query) {
   return request({
-    url: 'http://127.0.0.1/game',
+    url: '/game',
     method: 'get',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
     params: {query}
   })
 }

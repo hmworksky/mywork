@@ -94,22 +94,98 @@ export const constantRouterMap = [
         component: () => import('@/views/game/components/interfaceList'),
         name: 'interfaceList',
         meta: {title: '接口列表', icon: 'list', noCache: true, affix: true}
-      }
+      },
+      {
+        path: 'branch/list',
+        component: () => import('@/views/game/components/branchList'),
+        name: 'branchList',
+        meta: {title: '分支管理', icon: 'list', noCache: true, affix: true}
+      },
+      {
+        path: 'redis/list',
+        component: () => import('@/views/game/components/redisList'),
+        name: 'redisList',
+        meta: {title: 'Redis缓存列表', icon: 'list', noCache: true, affix: true}
+      },
+      {
+        path: 'memcached/list',
+        component: () => import('@/views/game/components/memcachedList'),
+        name: 'memcachedList',
+        meta: {title: 'Memcached列表', icon: 'list', noCache: true, affix: true}
+      },
     ]
   },
   {
     path: '/documentation',
     component: Layout,
     redirect: '/documentation/index',
+    meta: { title: '文档相关', icon: 'documentation', affix: true },
     children: [
       {
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: 'documentation', icon: 'documentation', affix: true }
-      }
+        meta: { title: '流程规范', icon: 'list', affix: true }
+      },
+      {
+        path: 'experience',
+        component: () => import('@/views/documentation/components/experience'),
+        name: 'experience',
+        meta: { title: '经验总结', icon: 'list', affix: true }
+      },
+      {
+        path: 'guidelines',
+        component: () => import('@/views/documentation/components/newGuidelines'),
+        name: 'newGuidelines',
+        meta: { title: '新人指南', icon: 'list', affix: true }
+      },
+      {
+        path: 'project',
+        component: () => import('@/views/documentation/components/projectConclusion'),
+        name: 'projectConclusion',
+        meta: { title: '项目相关', icon: 'list', affix: true }
+      },
+      {
+        path: 'phone',
+        component: () => import('@/views/documentation/components/phoneDocument'),
+        name: 'phoneDocument',
+        meta: { title: '手机资产', icon: 'list', affix: true }
+      },
+      {
+        path: 'environment',
+        component: () => import('@/views/documentation/components/environmentDocument'),
+        name: 'environmentDocument',
+        meta: { title: '环境信息', icon: 'list', affix: true }
+      },
+      {
+        path: 'technical',
+        component: () => import('@/views/documentation/components/technicalDocument'),
+        name: 'technicalDocument',
+        meta: { title: '技术文档', icon: 'list', affix: true }
+      },
     ]
   },
+  {
+    path: '/config',
+    component: Layout,
+    redirect: '/config/index',
+    meta: { title: '配置相关', icon: 'clipboard', affix: true },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/config/index'),
+        name: 'Config',
+        meta: { title: '常用配置', icon: 'list', affix: true }
+      },
+      {
+        path: 'index',
+        component: () => import('@/views/config/components/environmentConfig'),
+        name: 'environmentConfig',
+        meta: { title: '环境配置', icon: 'list', affix: true }
+      },
+    ]
+  },
+
   {
     path: '/guide',
     component: Layout,

@@ -188,7 +188,7 @@ const gameStatusKeyValue = statusOptions.reduce((acc, cur) => {
 }, {})
 
 export default {
-  name: 'GameList',
+  name: 'redisList',
   components: { Pagination },
   directives: { waves },
   filters: {
