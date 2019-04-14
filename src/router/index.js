@@ -116,6 +116,44 @@ export const constantRouterMap = [
     ]
   },
   {
+    path: '/project',
+    component: Layout,
+    redirect: '/project/index',
+    meta: { title: '项目管理', icon: 'clipboard', affix: true },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/project/index'),
+        name: 'Project',
+        meta: { title: '项目列表', icon: 'list', affix: true }
+      },
+      {
+        path: 'plan',
+        component: () => import('@/views/project/components/Plan'),
+        name: 'Plan',
+        meta: { title: '项目计划', icon: 'list', affix: true }
+      },
+      {
+        path: 'case',
+        component: () => import('@/views/project/components/testCase'),
+        name: 'testCase',
+        meta: { title: '测试用例', icon: 'list', affix: true }
+      },
+      {
+        path: 'chart',
+        component: () => import('@/views/project/components/projectChart'),
+        name: 'projectChart',
+        meta: { title: '图表', icon: 'list', affix: true }
+      },
+      {
+        path: 'board',
+        component: () => import('@/views/project/components/projectBoard'),
+        name: 'projectBoard',
+        meta: { title: '项目看板', icon: 'list', affix: true }
+      },
+    ]
+  },
+  {
     path: '/documentation',
     component: Layout,
     redirect: '/documentation/index',
