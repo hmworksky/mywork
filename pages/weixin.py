@@ -1,7 +1,7 @@
 from pages.basePage import BasePages
 
 
-class BubbleStartPage(BasePages):
+class WxPage(BasePages):
 
     def __init__(self):
         super().__init__("weixin")

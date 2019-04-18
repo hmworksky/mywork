@@ -15,6 +15,7 @@ from airtest.core.error import TargetNotFoundError
 from pages.mode_list import ModeListPage
 from pages.pvp_gaming import PvpGamingPage
 from pages.pvp_game_over import PvpGameOverPage
+from pages.weixin import WxPage
 
 
 class BubbleBaseImport(TestCase):
@@ -36,6 +37,7 @@ class BubbleBaseImport(TestCase):
         cls.mode_list = ModeListPage()
         cls.pvp_gaming = PvpGamingPage()
         cls.pvp_game_over = PvpGameOverPage()
+        cls.wx = WxPage()
 
     @classmethod
     def setUpClass(cls):
