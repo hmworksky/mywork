@@ -6,6 +6,7 @@ class BubbleStartPage(BasePages):
     def __init__(self):
         super().__init__("start")
 
+    @property
     def play_game(self):
         """开始游戏"""
         return self.get_image("start", record_pos=(0.012, 0.512))

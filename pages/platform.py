@@ -41,10 +41,3 @@ class PlatformStartPage(BasePages):
     def platform_refresh(self):
         """顶部刷新"""
         return self.get_image("platform_refresh", record_pos=(0.276, -0.769))
-
-
-if __name__ == '__main__':
-    p = BubbleStartPage()
-    res = p.get_image("start")
-    print(res)
-

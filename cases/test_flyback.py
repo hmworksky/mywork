@@ -1,29 +1,8 @@
 from airtest.core.api import *
 from cases.bubbleImport import BubbleBaseImport
-from pages.homePage import HallPage
-from pages.skillPage import SkillPage
-from pages.skin_page import SkinPage
-from pages.check_point_page import CheckpointPage
-from pages.pve_game_page import PveGamingPage
-from pages.achievement_page import AchievementPage
 
 
 class HomeCase(BubbleBaseImport):
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.home = HallPage()
-        cls.skin = SkinPage()
-        cls.ck = CheckpointPage()
-        cls.pve_gaming = PveGamingPage()
-        cls.achievement = AchievementPage()
-        # pass
-
-    def setUp(self):
-        super().setUp()
-        # self.home = HallPage()
-        self.skill = SkillPage()
 
     def tearDown(self):
         pass
@@ -192,41 +171,212 @@ class HomeCase(BubbleBaseImport):
         pass
 
     def test_jump_platform_recharge(self):
-        """跳转平台充值页面成功"""
-        pass
+        """金币充值成功"""
+        # 点击金币充值按钮
+        touch(self.home.gold)
+        sleep(0.5)
+        # 点击充值一元
+        touch(self.recharge_list.one_yuan)
+
+        # 选择钻石支付
+        touch(self.platform_pay.diamond)
+        touch(self.platform_pay.pay_button)
+        sleep(1)
+        # 判断是否有支付成功的文案
+        success_flag = exists(self.platform_pay.pay_success_doc)
+        self.assertTrue(success_flag)
+        sleep(2)
+        # 点击确认，返回游戏首页
+        touch(self.platform_pay.pay_success_confirm)
+        # 要加载首页所以等待时间较长。。。
+        sleep(10)
+        # 确认返回了首页,看下排行按钮在不在
+        rank_flag = exists(self.home.rank)
+        self.assertTrue(rank_flag)
 
     def test_rank(self):
         """排行榜有数据显示"""
-        pass
+        touch(self.home.rank)
+        sleep(1.5)
+        num_one_flag = exists(self.home.rank_num_one)
+        self.assertTrue(num_one_flag)
 
     def test_classic_mode(self):
         """完成一次经典模式战斗"""
-        pass
+        # 点击经典模式
+        touch(self.home.classic_mode)
+        # 加载有点慢，稍微等待下
+        sleep(5)
+        touch(self.mode_list.primary_mode)
+        flag = True
+        try:
+            wait(self.pvp_gaming.is_gaming_flag, timeout=60)
+            # 先使用一次道具
+            touch(self.pvp_gaming.remove_one_row_item)
+            # 再发射一次泡泡
+            touch(self.pvp_gaming.launch_area)
+        except TargetNotFoundError:
+            flag = False
+        self.assertTrue(flag)
+
+        # 退出游戏,避免复盘弹层，影响其它
+        touch(self.pvp_gaming.quit)
+        sleep(1)
+        touch(self.pvp_gaming.quit_first_confirm)
+        sleep(1)
+        touch(self.pvp_gaming.quit_second_confirm)
+        sleep(5)
+
+        # 发现有结算弹层就先点确认
+        lose_flag = exists(self.pvp_game_over.lose_doc)
+        if lose_flag:
+            touch(self.pvp_game_over.settle_confirm)
+        sleep(1)
+
+        touch(self.pvp_game_over.go_back)
+        print("####")
 
     def test_crazy_mode(self):
         """完成一次疯狂模式战斗"""
-        pass
+        # 点击经典模式
+        touch(self.home.crazy_against)
+        # 加载有点慢，稍微等待下
+        sleep(5)
+        touch(self.mode_list.primary_mode)
+        flag = True
+        try:
+            wait(self.pvp_gaming.is_gaming_flag, timeout=60)
+            # 先使用一次道具
+            touch(self.pvp_gaming.remove_one_row_item)
+            # 再发射一次泡泡
+            touch(self.pvp_gaming.launch_area)
+        except TargetNotFoundError:
+            flag = False
+        self.assertTrue(flag)
+
+        # 退出游戏,避免复盘弹层，影响其它
+        touch(self.pvp_gaming.quit)
+        sleep(0.5)
+        touch(self.pvp_gaming.quit_first_confirm)
+        sleep(0.5)
+        touch(self.pvp_gaming.quit_second_confirm)
+        sleep(5)
+
+        # 发现有结算弹层就先点确认
+        lose_flag = exists(self.pvp_game_over.lose_doc)
+        if lose_flag:
+            touch(self.pvp_game_over.settle_confirm)
+        sleep(1)
+
+        touch(self.pvp_game_over.go_back)
 
     def test_pvp_rematch(self):
         """PVP再战一场"""
-        pass
+        wait(self.home.rank, timeout=30)
+
+        # 点击经典模式
+        touch(self.home.classic_mode)
+        # 加载有点慢，稍微等待下
+        sleep(5)
+        touch(self.mode_list.primary_mode)
+        flag = True
+        try:
+            wait(self.pvp_gaming.is_gaming_flag, timeout=60)
+            # 先使用一次道具
+            touch(self.pvp_gaming.remove_one_row_item)
+            # 再发射一次泡泡
+            touch(self.pvp_gaming.launch_area)
+        except TargetNotFoundError:
+            flag = False
+        self.assertTrue(flag)
+
+        # 退出游戏
+        touch(self.pvp_gaming.quit)
+        sleep(1)
+        touch(self.pvp_gaming.quit_first_confirm)
+        sleep(1)
+        touch(self.pvp_gaming.quit_second_confirm)
+        sleep(10)
+
+        # 发现有结算弹层就先点确认
+        lose_flag = exists(self.pvp_game_over.lose_doc)
+        if lose_flag:
+            touch(self.pvp_game_over.settle_confirm)
+
+        # 点击重新匹配
+        touch(self.pvp_game_over.rematch)
+
+        flag = True
+        try:
+            wait(self.pvp_gaming.is_gaming_flag, timeout=60)
+        except TargetNotFoundError:
+            flag = False
+        self.assertTrue(flag)
+
+        # 再次退出，避免复盘
+        touch(self.pvp_gaming.quit)
+        sleep(1)
+        touch(self.pvp_gaming.quit_first_confirm)
+        sleep(1)
+        touch(self.pvp_gaming.quit_second_confirm)
+        sleep(5)
+
+        # 发现有结算弹层就先点确认
+        lose_flag = exists(self.pvp_game_over.lose_doc)
+        if lose_flag:
+            touch(self.pvp_game_over.settle_confirm)
+        touch(self.pvp_game_over.go_back)
 
     def test_buy_gold(self):
-        """金币充值"""
-
-        pass
+        """余额充值"""
+        wait(self.home.rank, timeout=30)
+        touch(self.home.joy_beans)
+        sleep(3)
+        touch(self.recharge_list.amount_input)
+        sleep(1)
+        touch(self.recharge_list.key_one)
+        sleep(1)
+        touch(self.recharge_list.key_confirm)
+        sleep(0.5)
+        touch(self.recharge_list.recharge_buy_button)
+        # 使用钻石购买
+        sleep(3)
+        touch(self.platform_pay.diamond)
+        sleep(1)
+        touch(self.platform_pay.pay_button)
+        sleep(2)
+        success_flag = exists(self.platform_pay.pay_success_doc)
+        sleep(1)
+        touch(self.platform_pay.pay_success_confirm)
+        sleep(8)
+        home_flag = exists(self.home.rank)
+        self.assertTrue(all([success_flag, home_flag]))
 
     def test_pvp_egg_receive(self):
         """PVP彩蛋领取"""
+        # todo 需要修改后台配置以及机器人使用道具频率
         pass
 
     def test_gold_auto_replenished(self):
         """金币自动补足"""
+        # todo 需要先调用扣除金币接口
         pass
 
     def test_home_page_share(self):
         """主页面分享"""
-        pass
+        wait(self.home.share, timeout=30)
+        touch(self.home.share)
+        sleep(3)
+        touch(self.home.wx_share)
+        sleep(1)
+        wait(self.home.wx_login_title)
+        touch(self.home.wx_user)
+        text("2875057261")
+        sleep(2)
+        touch(self.home.wx_pwd)
+        text("test1324")
+
+
 
     def test_pvp_settlement_share(self):
         """PVP胜利结算分享"""

@@ -3,25 +3,47 @@ from airtest.core.api import *
 from pages.start import BubbleStartPage
 from public.login import Login
 from pages.platform import PlatformStartPage
+from pages.homePage import HomePage
+from pages.skillPage import SkillPage
+from pages.skin_page import SkinPage
+from pages.check_point_page import CheckpointPage
+from pages.pve_game_page import PveGamingPage
+from pages.achievement_page import AchievementPage
+from pages.recharge_list import RechargeListPage
+from pages.platform_pay import PlatformPayPage
 from airtest.core.error import TargetNotFoundError
+from pages.mode_list import ModeListPage
+from pages.pvp_gaming import PvpGamingPage
+from pages.pvp_game_over import PvpGameOverPage
 
 
 class BubbleBaseImport(TestCase):
     """泡泡龙登录页面用例"""
 
-    # def exists(self):
-    #     exists
+    @classmethod
+    def load_page(cls):
+        cls.p = PlatformStartPage()
+        cls.b = BubbleStartPage()
+        cls.login = Login()
+        cls.home = HomePage()
+        cls.skin = SkinPage()
+        cls.ck = CheckpointPage()
+        cls.pve_gaming = PveGamingPage()
+        cls.achievement = AchievementPage()
+        cls.skill = SkillPage()
+        cls.recharge_list = RechargeListPage()
+        cls.platform_pay = PlatformPayPage()
+        cls.mode_list = ModeListPage()
+        cls.pvp_gaming = PvpGamingPage()
+        cls.pvp_game_over = PvpGameOverPage()
 
     @classmethod
     def setUpClass(cls):
         connect_device("Android:///")
-        cls.p = PlatformStartPage()
-        cls.b = BubbleStartPage()
-        cls.login = Login()
         cls.back = keyevent("BACK")
         cls.first = False
         start_app("com.pingan.gamehall")
-
+        cls.load_page()
         cls.p.start_app()
         sleep(2.0)
         if exists(cls.p.welfare_close):
@@ -47,7 +69,7 @@ class BubbleBaseImport(TestCase):
             except TargetNotFoundError:
                 pass
         else:
-            touch(cls.b.play_game())
+            touch(cls.b.play_game)
         sleep(30)
         cls.first = True
 

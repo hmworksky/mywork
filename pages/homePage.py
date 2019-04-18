@@ -1,7 +1,7 @@
 from pages.basePage import BasePages
 
 
-class HallPage(BasePages):
+class HomePage(BasePages):
 
     def __init__(self):
         super().__init__("homepage")
@@ -44,7 +44,7 @@ class HallPage(BasePages):
     @property
     def share(self):
         """分享"""
-        return self.get_image("share", record_pos=(0.363, -0.461))
+        return self.get_image("share", record_pos=(0.37, -0.451))
 
     @property
     def skill(self):
@@ -95,3 +95,48 @@ class HallPage(BasePages):
     def joy_beans(self):
         """欢乐豆"""
         return self.get_image("joy_beans", record_pos=(0.003, -0.659))
+
+    @property
+    def rank(self):
+        """排行榜"""
+        return self.get_image("rank", record_pos=(-0.33, -0.159))
+
+    @property
+    def rank_num_one(self):
+        """排行榜第一"""
+        return self.get_image("rank_num_one", record_pos=(-0.247, -0.213))
+
+    @property
+    def wx_share(self):
+        """微信分享"""
+        return self.get_image("wx_share", record_pos=(-0.14, -0.203))
+
+    @property
+    def wx_login_title(self):
+        """微信登录标题"""
+        return self.get_image("wx_login_title", record_pos=(0.017, -0.59))
+
+    @property
+    def wx_user(self):
+        """微信用户名"""
+        return self.get_image("wx_user", record_pos=(-0.061, -0.397))
+
+    @property
+    def wx_pwd(self):
+        """微信密码"""
+        return self.get_image("wx_pwd", record_pos=(-0.115, -0.261))
+
+    @property
+    def wx_share_prize_title(self):
+        """微信分享成功后奖励标题"""
+        return self.get_image("wx_share_prize_title", record_pos=(0.006, -0.247))
+
+    @property
+    def share_success_doc(self):
+        """分享成功回来后的弹层文案"""
+        return self.get_image("share_success_doc", record_pos=(-0.022, 0.012))
+
+    @property
+    def share_success_confirm(self):
+        """分享成功回来后的弹层确定按钮"""
+        return self.get_image("share_success_confirm", record_pos=(-0.012, 0.185))
