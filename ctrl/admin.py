@@ -7,7 +7,6 @@ class AdminCtrl:
     def __init__(self):
         self.session = requests.Session()
         self.location = "http://9test74-admin.stg3.1768.com"
-        self.login()
         self.send_mail_url = "{}/index.php?act=bubble_mail&st=send_mail".format(self.location)
 
     def login(self):
@@ -24,6 +23,7 @@ class AdminCtrl:
         self.session.post(login_url, data=login_data)
 
     def send_mail(self, user_id):
+        self.login()
         """泡泡龙给个人发送邮件"""
         mail_data = {
             "type": 1,

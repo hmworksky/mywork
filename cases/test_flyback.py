@@ -4,6 +4,13 @@ from cases.bubbleImport import BubbleBaseImport
 
 class HomeCase(BubbleBaseImport):
 
+    @classmethod
+    def setUpClass(cls):
+        pass
+
+    # def setUp(self):
+    #     pass
+
     def test_complete_task(self):
         """领取一次任务奖励"""
         pass
@@ -57,7 +64,7 @@ class HomeCase(BubbleBaseImport):
 
         # 游戏结束时点击购买限时特惠
 
-        # 支付
+        # 钻石支付
         self.pay_ctrl.diamond_pay()
         # 判断是否回了主页
         homepage_flag = exists(self.home.skill)
@@ -140,15 +147,15 @@ class HomeCase(BubbleBaseImport):
         # 进入关卡
         self.play_ctrl.in_pve_game()
 
-        # 循环使用道具
+        # 循环发射泡泡
         self.play_ctrl.pve_foreach_send_bubble()
 
         # 判断炮台还有5个泡泡
         five_num_flag = exists(self.pve_gaming.five_num)
-        self.assertTrue(five_num_flag)
 
         # 退出游戏
         self.play_ctrl.quit_pve()
+        self.assertTrue(five_num_flag)
 
     def test_receive_achievement(self):
         """领取一次成就"""
@@ -274,12 +281,7 @@ class HomeCase(BubbleBaseImport):
         self.assertTrue(flag)
 
         # 退出游戏
-        touch(self.pvp_gaming.quit)
-        sleep(1)
-        touch(self.pvp_gaming.quit_first_confirm)
-        sleep(1)
-        touch(self.pvp_gaming.quit_second_confirm)
-        sleep(10)
+        self.play_ctrl.quit_pvp()
 
         # 发现有结算弹层就先点确认
         lose_flag = exists(self.pvp_game_over.lose_doc)
@@ -297,12 +299,7 @@ class HomeCase(BubbleBaseImport):
         self.assertTrue(flag)
 
         # 再次退出，避免复盘
-        touch(self.pvp_gaming.quit)
-        sleep(1)
-        touch(self.pvp_gaming.quit_first_confirm)
-        sleep(1)
-        touch(self.pvp_gaming.quit_second_confirm)
-        sleep(5)
+        self.play_ctrl.quit_pvp()
 
         # 发现有结算弹层就先点确认
         lose_flag = exists(self.pvp_game_over.lose_doc)
@@ -341,21 +338,30 @@ class HomeCase(BubbleBaseImport):
 
     def test_home_page_share(self):
         """主页面分享"""
-        wait(self.home.share, timeout=30)
-        touch(self.home.share)
-        sleep(3)
-        touch(self.home.wx_share)
-        sleep(1)
-        wait(self.home.wx_login_title)
-        touch(self.home.wx_user)
-        text("2875057261")
-        sleep(2)
-        touch(self.home.wx_pwd)
-        text("test1324")
+        # 打开首页分享
+        self.share_ctrl.open_homepage_share()
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
 
     def test_pvp_settlement_share(self):
         """PVP胜利结算分享"""
-        pass
+        # pvp胜利一场 TODO 未测试
+        self.play_ctrl.play_win_pvp()
+
+        # 点击分享
+        touch(self.pvp_game_over.share)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
 
     def test_sign_three_day_share(self):
         """签到7天分享"""
@@ -363,7 +369,10 @@ class HomeCase(BubbleBaseImport):
 
     def test_buy_skill_share(self):
         """激活技能分享"""
-        pass
+        # 打开技能页面
+        touch(self.home.skill)
+
+        #
 
     def test_buy_bubble_skin_share(self):
         """购买泡泡皮肤分享"""
@@ -375,4 +384,15 @@ class HomeCase(BubbleBaseImport):
 
     def test_pve_pass_share(self):
         """PVE过关分享"""
-        pass
+        # pve战斗胜利一场进入游戏
+        self.play_ctrl.play_win_pve()
+
+        # 点击炫耀
+        touch(self.ck.flaunt)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)

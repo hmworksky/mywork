@@ -2,6 +2,7 @@ from pages.homePage import HomePage
 from pages.check_point_page import CheckpointPage
 from pages.pve_game_page import PveGamingPage
 from pages.pvp_gaming import PvpGamingPage
+from pages.pvp_game_over import PvpGameOverPage
 from pages.mode_list import ModeListPage
 from airtest.core.api import *
 
@@ -13,6 +14,7 @@ class PlayCtrl:
     pve_gaming = PveGamingPage()
     pvp_gaming = PvpGamingPage()
     mode_list = ModeListPage()
+    pvp_game_over = PvpGameOverPage()
 
     def in_pve_game(self, is_add_three=False):
         """进入pve游戏页面"""
@@ -36,7 +38,7 @@ class PlayCtrl:
 
     def pve_foreach_use_item(self):
         """循环使用道具"""
-
+        # TODO 这里要初始化很多道具，或者做购买道具的操作
         success_flag = exists(self.checkpoint.success_pass)
         while not success_flag:
             touch(self.pve_gaming.light_item)
@@ -69,6 +71,23 @@ class PlayCtrl:
 
         # 循环使用道具
         self.pve_foreach_use_item()
+
+    def play_win_pvp(self):
+        """pvp游戏胜利"""
+        # 先进入游戏
+        self.in_classic_mode()
+
+        # 循环使用消除一排道具
+        self.pvp_foreach_use_item()
+
+    def pvp_foreach_use_item(self):
+        """循环使用消除一排道具"""
+
+        success_flag = exists(self.pvp_game_over.rematch)
+        while not success_flag:
+            touch(self.pvp_gaming.remove_one_row_item)
+            sleep(0.5)
+            success_flag = exists(self.checkpoint.success_pass)
 
     def quit_pve(self):
         """PVE游戏中退出"""

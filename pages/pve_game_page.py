@@ -34,7 +34,8 @@ class PveGamingPage(BasePages):
     @property
     def quit_game(self):
         """退出游戏"""
-        return self.get_image("quit_game", record_pos=(0.361, -0.645))
+        return self.get_image("quit_game")
+    # , record_pos=(0.361, -0.645)
 
     @property
     def quit_confirm(self):
