@@ -1,5 +1,6 @@
 from unittest import TestCase
 from airtest.core.api import *
+from ctrl.admin import AdminCtrl
 from pages.start import BubbleStartPage
 from public.login import Login
 from pages.platform import PlatformStartPage
@@ -16,28 +17,33 @@ from pages.mode_list import ModeListPage
 from pages.pvp_gaming import PvpGamingPage
 from pages.pvp_game_over import PvpGameOverPage
 from pages.weixin import WxPage
+from pages.mail import MailPage
+from ctrl.payCtrl import PayCtrl
+from ctrl.playCtrl import PlayCtrl
 
 
 class BubbleBaseImport(TestCase):
     """泡泡龙登录页面用例"""
 
-    @classmethod
-    def load_page(cls):
-        cls.p = PlatformStartPage()
-        cls.b = BubbleStartPage()
-        cls.login = Login()
-        cls.home = HomePage()
-        cls.skin = SkinPage()
-        cls.ck = CheckpointPage()
-        cls.pve_gaming = PveGamingPage()
-        cls.achievement = AchievementPage()
-        cls.skill = SkillPage()
-        cls.recharge_list = RechargeListPage()
-        cls.platform_pay = PlatformPayPage()
-        cls.mode_list = ModeListPage()
-        cls.pvp_gaming = PvpGamingPage()
-        cls.pvp_game_over = PvpGameOverPage()
-        cls.wx = WxPage()
+    p = PlatformStartPage()
+    b = BubbleStartPage()
+    login = Login()
+    home = HomePage()
+    skin = SkinPage()
+    ck = CheckpointPage()
+    pve_gaming = PveGamingPage()
+    achievement = AchievementPage()
+    skill = SkillPage()
+    recharge_list = RechargeListPage()
+    platform_pay = PlatformPayPage()
+    mode_list = ModeListPage()
+    pvp_gaming = PvpGamingPage()
+    pvp_game_over = PvpGameOverPage()
+    wx = WxPage()
+    admin = AdminCtrl()
+    mail = MailPage()
+    pay_ctrl = PayCtrl()
+    play_ctrl = PlayCtrl()
 
     @classmethod
     def setUpClass(cls):
@@ -45,10 +51,10 @@ class BubbleBaseImport(TestCase):
         cls.back = keyevent("BACK")
         cls.first = False
         start_app("com.pingan.gamehall")
-        cls.load_page()
         cls.p.start_app()
         sleep(2.0)
-        if exists(cls.p.welfare_close):
+        welfare_flag = exists(cls.p.welfare_close)
+        if welfare_flag:
             touch(cls.p.welfare_close)
         sleep(1.5)
         touch(cls.p.search_button())
@@ -74,6 +80,7 @@ class BubbleBaseImport(TestCase):
             touch(cls.b.play_game)
         sleep(30)
         cls.first = True
+        cls.user_id = "2038983941"
 
     def setUp(self):
         if self.first:

@@ -4,9 +4,6 @@ from cases.bubbleImport import BubbleBaseImport
 
 class HomeCase(BubbleBaseImport):
 
-    def tearDown(self):
-        pass
-
     def test_complete_task(self):
         """领取一次任务奖励"""
         pass
@@ -52,7 +49,19 @@ class HomeCase(BubbleBaseImport):
 
     def test_buy_flash_sales(self):
         """购买一次限时特惠"""
-        pass
+        # 进入PVE游戏页面
+        self.play_ctrl.in_pve_game()
+
+        # 循环使用道具
+        self.play_ctrl.pve_foreach_use_item()
+
+        # 游戏结束时点击购买限时特惠
+
+        # 支付
+        self.pay_ctrl.diamond_pay()
+        # 判断是否回了主页
+        homepage_flag = exists(self.home.skill)
+        self.assertTrue(homepage_flag)
 
     def test_complete_new_guide(self):
         """完成新手指引"""
@@ -61,16 +70,7 @@ class HomeCase(BubbleBaseImport):
     def test_pve_confirm(self):
         """完成一次pve闯关"""
         # 进入关卡
-        touch(self.home.plot_mode)
-        sleep(2)
-        # 选择关卡
-        touch(self.ck.checkpoint_sixteen)
-        # 开始游戏
-        touch(self.ck.start_game)
-        sleep(20)
-        guide_flag = exists(self.pve_gaming.guide_title)
-        if guide_flag:
-            touch(self.pve_gaming.guide_start)
+        self.play_ctrl.in_pve_game()
 
         # 回收一次能量
         touch(self.pve_gaming.power_meter)
@@ -90,69 +90,65 @@ class HomeCase(BubbleBaseImport):
 
     def test_pve_chapter_unlock(self):
         """完成章节解锁"""
-        pass
+        # 进入章节解锁页面 TODO 数据初始化，这个用例没有运行
+        touch(self.home.classic_mode)
+
+        # 点击解锁标识
+        touch(self.ck.chapter_lock)
+
+        # 弹层中使用金币解锁
+        touch(self.ck.chapter_unlock_button)
+
+        # 成功看到第16关
+        six_teen_flag = exists(self.ck.checkpoint_sixteen)
+        self.assertTrue(six_teen_flag)
 
     def test_receive_mail(self):
         """领取一封邮件"""
-        pass
+        # 先通过后台发送一封邮件 TODO 这个用例还没有试过
+        self.admin.send_mail(self.user_id)
+
+        # 打开邮件列表
+        touch(self.home.mail)
+
+        # 点击发送的邮件
+        touch(self.mail.mail_content)
+        sleep(1)
+        # 看下是否有删除按钮
+        delete_flag = exists(self.mail.delete_mail)
+        self.assertTrue(delete_flag)
+
+        # 删除邮件
+        touch(self.mail.delete_mail)
+
+        # 查看邮件列表为空
+        mail_list = exists(self.mail.mail_content)
+        self.assertFalse(mail_list)
 
     def test_buy_add_three_item(self):
         """购买+3道具成功"""
-        # 进入关卡
-        touch(self.home.plot_mode)
-        sleep(2)
-        # 选择关卡
-        touch(self.ck.checkpoint_sixteen)
-        # 购买+3
-        touch(self.ck.add_three)
-        # 开始游戏
-        touch(self.ck.start_game)
-        sleep(20)
-        # 先点掉战斗开始指引
-        guide_flag = exists(self.pve_gaming.guide_title)
-        if guide_flag:
-            touch(self.pve_gaming.guide_start)
+        # 进入游戏,使用+3
+        self.play_ctrl.in_pve_game(True)
 
         bubble_num_is_sixteen = exists(self.pve_gaming.bubble_num)
         # 判断+3道具是否购买成功
         self.assertTrue(bubble_num_is_sixteen)
 
     def test_game_over_buy_add_five_item(self):
-        """游戏结束购买三次+5道具成功"""
+        """游戏结束购买+5道具成功"""
 
         # 进入关卡
-        touch(self.home.plot_mode)
-        sleep(2)
+        self.play_ctrl.in_pve_game()
 
-        # 选择关卡
-        touch(self.ck.checkpoint_sixteen)
-
-        # 开始游戏
-        touch(self.ck.start_game)
-        sleep(20)
-        guide_flag = exists(self.pve_gaming.guide_title)
-        if guide_flag:
-            touch(self.pve_gaming.guide_start)
-
-        # 循环打泡泡，发现+5道具的弹层标题则继续发送
-        five_title_flag = exists(self.pve_gaming.five_title)
-        while not five_title_flag:
-            touch(self.pve_gaming.sixteen_launch_area)
-            five_title_flag = exists(self.pve_gaming.five_title)
-
-            if five_title_flag:
-                touch(self.pve_gaming.five_first)
-                sleep(1.5)
+        # 循环使用道具
+        self.play_ctrl.pve_foreach_send_bubble()
 
         # 判断炮台还有5个泡泡
         five_num_flag = exists(self.pve_gaming.five_num)
         self.assertTrue(five_num_flag)
 
         # 退出游戏
-        touch(self.pve_gaming.quit_game)
-        touch(self.pve_gaming.quit_confirm)
-        touch(self.pve_gaming.quit_second_confirm)
-        sleep(3)
+        self.play_ctrl.quit_pve()
 
     def test_receive_achievement(self):
         """领取一次成就"""
@@ -179,15 +175,7 @@ class HomeCase(BubbleBaseImport):
         touch(self.recharge_list.one_yuan)
 
         # 选择钻石支付
-        touch(self.platform_pay.diamond)
-        touch(self.platform_pay.pay_button)
-        sleep(1)
-        # 判断是否有支付成功的文案
-        success_flag = exists(self.platform_pay.pay_success_doc)
-        self.assertTrue(success_flag)
-        sleep(2)
-        # 点击确认，返回游戏首页
-        touch(self.platform_pay.pay_success_confirm)
+        self.pay_ctrl.diamond_pay()
         # 要加载首页所以等待时间较长。。。
         sleep(10)
         # 确认返回了首页,看下排行按钮在不在
@@ -220,12 +208,7 @@ class HomeCase(BubbleBaseImport):
         self.assertTrue(flag)
 
         # 退出游戏,避免复盘弹层，影响其它
-        touch(self.pvp_gaming.quit)
-        sleep(1)
-        touch(self.pvp_gaming.quit_first_confirm)
-        sleep(1)
-        touch(self.pvp_gaming.quit_second_confirm)
-        sleep(5)
+        self.play_ctrl.quit_pvp()
 
         # 发现有结算弹层就先点确认
         lose_flag = exists(self.pvp_game_over.lose_doc)
@@ -341,16 +324,10 @@ class HomeCase(BubbleBaseImport):
         touch(self.recharge_list.recharge_buy_button)
         # 使用钻石购买
         sleep(3)
-        touch(self.platform_pay.diamond)
-        sleep(1)
-        touch(self.platform_pay.pay_button)
-        sleep(2)
-        success_flag = exists(self.platform_pay.pay_success_doc)
-        sleep(1)
-        touch(self.platform_pay.pay_success_confirm)
+        self.pay_ctrl.diamond_pay()
         sleep(8)
         home_flag = exists(self.home.rank)
-        self.assertTrue(all([success_flag, home_flag]))
+        self.assertTrue(home_flag)
 
     def test_pvp_egg_receive(self):
         """PVP彩蛋领取"""
@@ -375,8 +352,6 @@ class HomeCase(BubbleBaseImport):
         sleep(2)
         touch(self.home.wx_pwd)
         text("test1324")
-
-
 
     def test_pvp_settlement_share(self):
         """PVP胜利结算分享"""

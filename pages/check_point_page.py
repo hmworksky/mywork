@@ -41,4 +41,43 @@ class CheckpointPage(BasePages):
         """好友头像"""
         return self.get_image("friend_face", record_pos=(-0.072, 0.343))
 
+    @property
+    def chapter_lock(self):
+        """章节锁标识"""
+        return self.get_image("chapter_lock")
+
+    @property
+    def chapter_unlock_button(self):
+        """章节解锁解锁按钮"""
+        return self.get_image("chapter_unlock_button")
+
+    @property
+    def get_more_star(self):
+        """章节解锁弹层获得更多星按钮"""
+        return self.get_image("get_more_star")
+
+    @property
+    def chapter_unlock_share(self):
+        """章节解锁分享按钮"""
+        return self.get_image("chapter_unlock_share")
+
+    @property
+    def flaunt(self):
+        """闯关成功炫耀"""
+        return self.get_image("flaunt")
+
+    @property
+    def success_close(self):
+        """闯关成功关闭按钮"""
+        return self.get_image("success_close")
+
+    @property
+    def success_pass(self):
+        """PVE成功过关文案"""
+        return self.get_image("success_pass")
+
+    @property
+    def try_again(self):
+        """闯关成功再试一次按钮"""
+        return self.get_image("try_again")
 
