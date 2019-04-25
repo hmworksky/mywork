@@ -140,3 +140,18 @@ class HomePage(BasePages):
     def share_success_confirm(self):
         """分享成功回来后的弹层确定按钮"""
         return self.get_image("share_success_confirm", record_pos=(-0.012, 0.185))
+
+    @property
+    def login_seven_flag(self):
+        """第7天登录活动标识"""
+        return self.get_image("login_seven_flag")
+
+    @property
+    def task_receive(self):
+        """任务领取按钮"""
+        return self.get_image("task_receive")
+
+    @property
+    def task_prize_title(self):
+        """任务领取成功奖励标题"""
+        return self.get_image("task_prize_title")

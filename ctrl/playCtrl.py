@@ -87,7 +87,7 @@ class PlayCtrl:
         while not success_flag:
             touch(self.pvp_gaming.remove_one_row_item)
             sleep(0.5)
-            success_flag = exists(self.checkpoint.success_pass)
+            success_flag = exists(self.pvp_game_over.rematch)
 
     def quit_pve(self):
         """PVE游戏中退出"""

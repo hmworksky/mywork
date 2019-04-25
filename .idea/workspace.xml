@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cacddb4-ebe5-419a-af64-6c978caa99dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ctrl/shareCtrl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/basePageImport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/front_auto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/front_auto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ctrl/skillCtrl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ctrl/skinCtrl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/public_element.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cases/bubbleImport.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases/bubbleImport.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cases/test_flyback.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases/test_flyback.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctrl/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctrl/playCtrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl/playCtrl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/pve_game/quit_game.png" beforeDir="false" afterPath="$PROJECT_DIR$/file/pve_game/quit_game.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pve_game_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pve_game_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrl/shareCtrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/ctrl/shareCtrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/homePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/homePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/basePageImport.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/basePageImport.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,39 +20,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_add_three_item.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_add_three_item Coverage Results" MODIFIED="1555566141646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_in_test_start_py.coverage" NAME="Unittests in test_start.py Coverage Results" MODIFIED="1555407595621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_in_test_home_py.coverage" NAME="Unittests in test_home.py Coverage Results" MODIFIED="1555468077520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_skin.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_skin Coverage Results" MODIFIED="1555499207795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_home_strength_exists.coverage" NAME="Unittests for test_home.HomeCase.test_home_strength_exists Coverage Results" MODIFIED="1555476109928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$shareCtrl.coverage" NAME="shareCtrl Coverage Results" MODIFIED="1556081035127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ctrl" />
     <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_receive_achievement.coverage" NAME="Unittests for test_flyback.HomeCase.test_receive_achievement Coverage Results" MODIFIED="1555595913653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
     <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_flash_sales.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_flash_sales Coverage Results" MODIFIED="1556083184181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$tools.coverage" NAME="tools Coverage Results" MODIFIED="1555392604636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_receive_mail.coverage" NAME="Unittests for test_flyback.HomeCase.test_receive_mail Coverage Results" MODIFIED="1556102374159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_ocr_image.coverage" NAME="Unittests for test_home.HomeCase.test_ocr_image Coverage Results" MODIFIED="1555468095499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_complete_task.coverage" NAME="Unittests for test_flyback.HomeCase.test_complete_task Coverage Results" MODIFIED="1556101896598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$front.coverage" NAME="front Coverage Results" MODIFIED="1555387064429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/software/AirtestIDE_2019-01-15_py3_win64/bubble/front.air" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_skill.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_skill Coverage Results" MODIFIED="1555503433095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_crazy_mode.coverage" NAME="Unittests for test_flyback.HomeCase.test_crazy_mode Coverage Results" MODIFIED="1556078967894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$start.coverage" NAME="start Coverage Results" MODIFIED="1555393528555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pages" />
-    <SUITE FILE_PATH="coverage/front_auto$admin.coverage" NAME="admin Coverage Results" MODIFIED="1555906220705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ctrl" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pvp_settlement_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_pvp_settlement_share Coverage Results" MODIFIED="1556084255842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase.coverage" NAME="Unittests for test_flyback.HomeCase Coverage Results" MODIFIED="1555499140705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_once_strength.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_once_strength Coverage Results" MODIFIED="1555489940513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
     <SUITE FILE_PATH="coverage/front_auto$first_bubble.coverage" NAME="first_bubble Coverage Results" MODIFIED="1555402804377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_jump_platform_recharge.coverage" NAME="Unittests for test_flyback.HomeCase.test_jump_platform_recharge Coverage Results" MODIFIED="1555597882122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
     <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_classic_mode.coverage" NAME="Unittests for test_flyback.HomeCase.test_classic_mode Coverage Results" MODIFIED="1556101214841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pve_pass_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_pve_pass_share Coverage Results" MODIFIED="1556171743958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_complete_task.coverage" NAME="Unittests for test_flyback.HomeCase.test_complete_task Coverage Results" MODIFIED="1556101896598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase.coverage" NAME="Unittests for test_flyback.HomeCase Coverage Results" MODIFIED="1555499140705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_add_three_item.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_add_three_item Coverage Results" MODIFIED="1555566141646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_once_strength.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_once_strength Coverage Results" MODIFIED="1556171536422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_skill_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_skill_share Coverage Results" MODIFIED="1556175903634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$shareCtrl.coverage" NAME="shareCtrl Coverage Results" MODIFIED="1556081035127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ctrl" />
     <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_game_over_buy_add_five_item.coverage" NAME="Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item Coverage Results" MODIFIED="1556104308797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_start_BubbleStartCase_test_start_game.coverage" NAME="Unittests for test_start.BubbleStartCase.test_start_game Coverage Results" MODIFIED="1555414055333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_in_test_home_py.coverage" NAME="Unittests in test_home.py Coverage Results" MODIFIED="1555468077520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_crazy_mode.coverage" NAME="Unittests for test_flyback.HomeCase.test_crazy_mode Coverage Results" MODIFIED="1556078967894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_receive_mail.coverage" NAME="Unittests for test_flyback.HomeCase.test_receive_mail Coverage Results" MODIFIED="1556102374159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_home_page_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_home_page_share Coverage Results" MODIFIED="1556172312219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$admin.coverage" NAME="admin Coverage Results" MODIFIED="1555906220705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ctrl" />
     <SUITE FILE_PATH="coverage/front_auto$temp.coverage" NAME="temp Coverage Results" MODIFIED="1555468768108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_home_task_exists.coverage" NAME="Unittests for test_home.HomeCase.test_home_task_exists Coverage Results" MODIFIED="1555470146360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pve_confirm.coverage" NAME="Unittests for test_flyback.HomeCase.test_pve_confirm Coverage Results" MODIFIED="1556102217647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pvp_rematch.coverage" NAME="Unittests for test_flyback.HomeCase.test_pvp_rematch Coverage Results" MODIFIED="1556079239232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_home_page_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_home_page_share Coverage Results" MODIFIED="1556080846282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_bubble_skin_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_bubble_skin_share Coverage Results" MODIFIED="1556173932283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
     <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_rank.coverage" NAME="Unittests for test_flyback.HomeCase.test_rank Coverage Results" MODIFIED="1555598294914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_gold.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_gold Coverage Results" MODIFIED="1555904037427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
-    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pve_pass_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_pve_pass_share Coverage Results" MODIFIED="1556081439026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_skill.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_skill Coverage Results" MODIFIED="1555503433095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$start.coverage" NAME="start Coverage Results" MODIFIED="1555393528555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pages" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_in_test_start_py.coverage" NAME="Unittests in test_start.py Coverage Results" MODIFIED="1555407595621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$front.coverage" NAME="front Coverage Results" MODIFIED="1555387064429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/software/AirtestIDE_2019-01-15_py3_win64/bubble/front.air" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_skin.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_skin Coverage Results" MODIFIED="1555499207795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$tools.coverage" NAME="tools Coverage Results" MODIFIED="1555392604636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/public" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_jump_platform_recharge.coverage" NAME="Unittests for test_flyback.HomeCase.test_jump_platform_recharge Coverage Results" MODIFIED="1555597882122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pvp_rematch.coverage" NAME="Unittests for test_flyback.HomeCase.test_pvp_rematch Coverage Results" MODIFIED="1556079239232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_home_strength_exists.coverage" NAME="Unittests for test_home.HomeCase.test_home_strength_exists Coverage Results" MODIFIED="1555476109928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_start_BubbleStartCase_test_start_game.coverage" NAME="Unittests for test_start.BubbleStartCase.test_start_game Coverage Results" MODIFIED="1555414055333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pve_confirm.coverage" NAME="Unittests for test_flyback.HomeCase.test_pve_confirm Coverage Results" MODIFIED="1556102217647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_pvp_settlement_share.coverage" NAME="Unittests for test_flyback.HomeCase.test_pvp_settlement_share Coverage Results" MODIFIED="1556172625662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_ocr_image.coverage" NAME="Unittests for test_home.HomeCase.test_ocr_image Coverage Results" MODIFIED="1555468095499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_flyback_HomeCase_test_buy_gold.coverage" NAME="Unittests for test_flyback.HomeCase.test_buy_gold Coverage Results" MODIFIED="1556172079592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
+    <SUITE FILE_PATH="coverage/front_auto$Unittests_for_test_home_HomeCase_test_home_task_exists.coverage" NAME="Unittests for test_home.HomeCase.test_home_task_exists Coverage Results" MODIFIED="1555470146360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cases" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1271517314">
@@ -92,23 +93,58 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-743163931">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1746" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1746" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="13" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/pve_game_page.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cases/test_flyback.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="1587">
+              <caret line="291" column="54" lean-forward="true" selection-start-line="291" selection-start-column="54" selection-end-line="291" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cases/bubbleImport.py">
+        <entry file="file://$PROJECT_DIR$/ctrl/skinCtrl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="187">
+              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/basePageImport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="471">
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -126,42 +162,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ctrl/playCtrl.py">
+        <entry file="file://$PROJECT_DIR$/pages/homePage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1556082201068" expanded="true" signature="1415:1969" ph="..." />
-                <marker date="1556082201068" expanded="true" signature="1472:1481" ph="..." />
-                <marker date="1556082201068" expanded="true" signature="2304:2568" ph="..." />
-              </folding>
+            <state relative-caret-position="527">
+              <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/start.py">
+        <entry file="file://$PROJECT_DIR$/pages/public_element.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding>
-                <marker date="1555600915006" expanded="true" signature="97:151" ph="..." />
-                <marker date="1555600915006" expanded="true" signature="171:180" ph="..." />
-              </folding>
+            <state relative-caret-position="447">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cases/test_flyback.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ctrl/skillCtrl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="155" column="14" lean-forward="true" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <marker date="1556104292715" expanded="true" signature="157:215" ph="..." />
-              </folding>
+            <state relative-caret-position="160">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/skillPage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -221,18 +252,21 @@
         <option value="$PROJECT_DIR$/pages/pvp_game_over.py" />
         <option value="$PROJECT_DIR$/pages/recharge_list.py" />
         <option value="$PROJECT_DIR$/ctrl/wx.py" />
-        <option value="$PROJECT_DIR$/pages/homePage.py" />
         <option value="$PROJECT_DIR$/pages/weixin.py" />
         <option value="$PROJECT_DIR$/pages/mail.py" />
         <option value="$PROJECT_DIR$/pages/check_point_page.py" />
         <option value="$PROJECT_DIR$/ctrl/payCtrl.py" />
-        <option value="$PROJECT_DIR$/ctrl/shareCtrl.py" />
         <option value="$PROJECT_DIR$/public/__init__.py" />
-        <option value="$PROJECT_DIR$/public/basePageImport.py" />
         <option value="$PROJECT_DIR$/ctrl/admin.py" />
-        <option value="$PROJECT_DIR$/ctrl/playCtrl.py" />
         <option value="$PROJECT_DIR$/pages/pve_game_page.py" />
+        <option value="$PROJECT_DIR$/ctrl/playCtrl.py" />
+        <option value="$PROJECT_DIR$/public/basePageImport.py" />
+        <option value="$PROJECT_DIR$/ctrl/shareCtrl.py" />
+        <option value="$PROJECT_DIR$/ctrl/skinCtrl.py" />
         <option value="$PROJECT_DIR$/cases/bubbleImport.py" />
+        <option value="$PROJECT_DIR$/ctrl/skillCtrl.py" />
+        <option value="$PROJECT_DIR$/pages/public_element.py" />
+        <option value="$PROJECT_DIR$/pages/homePage.py" />
         <option value="$PROJECT_DIR$/cases/test_flyback.py" />
       </list>
     </option>
@@ -254,6 +288,7 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -274,6 +309,17 @@
               <item name="front_auto" type="b2602c69:ProjectViewProjectNode" />
               <item name="front_auto" type="462c0819:PsiDirectoryNode" />
               <item name="ctrl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front_auto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front_auto" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front_auto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front_auto" type="462c0819:PsiDirectoryNode" />
+              <item name="file" type="462c0819:PsiDirectoryNode" />
+              <item name="checkpoint" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front_auto" type="b2602c69:ProjectViewProjectNode" />
@@ -314,8 +360,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item">
-    <configuration name="Unittests for test_flyback.HomeCase.test_classic_mode" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for test_flyback.HomeCase.test_buy_skill_share">
+    <configuration name="Unittests for test_flyback.HomeCase.test_buy_bubble_skin_share" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="front_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,11 +372,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_classic_mode&quot;" />
+      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_buy_bubble_skin_share&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_flyback.HomeCase.test_complete_task" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_flyback.HomeCase.test_buy_gold" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="front_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,11 +387,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_complete_task&quot;" />
+      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_buy_gold&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="front_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -356,11 +402,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_game_over_buy_add_five_item&quot;" />
+      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_buy_skill_share&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_flyback.HomeCase.test_pve_confirm" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_flyback.HomeCase.test_home_page_share" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="front_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -371,11 +417,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_pve_confirm&quot;" />
+      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_home_page_share&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_flyback.HomeCase.test_receive_mail" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_flyback.HomeCase.test_pvp_settlement_share" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="front_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -386,24 +432,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_receive_mail&quot;" />
+      <option name="_new_target" value="&quot;test_flyback.HomeCase.test_pvp_settlement_share&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_pve_confirm" />
-      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_classic_mode" />
-      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_receive_mail" />
-      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_complete_task" />
-      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item" />
+      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_gold" />
+      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_home_page_share" />
+      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_pvp_settlement_share" />
+      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_bubble_skin_share" />
+      <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_skill_share" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item" />
-        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_receive_mail" />
-        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_pve_confirm" />
-        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_complete_task" />
-        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_classic_mode" />
+        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_skill_share" />
+        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_bubble_skin_share" />
+        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_pvp_settlement_share" />
+        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_home_page_share" />
+        <item itemvalue="Python tests.Unittests for test_flyback.HomeCase.test_buy_gold" />
       </list>
     </recent_temporary>
   </component>
@@ -421,57 +467,57 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_receive_mail - 2019.04.24 at 18h 25m 15s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_receive_mail" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pvp_settlement_share - 2019.04.25 at 14h 07m 19s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_pvp_settlement_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_receive_mail - 2019.04.24 at 18h 27m 58s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_receive_mail" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pvp_settlement_share - 2019.04.25 at 14h 12m 44s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_pvp_settlement_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pve_confirm - 2019.04.24 at 18h 31m 03s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_pve_confirm" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_bubble_skin_share - 2019.04.25 at 14h 32m 44s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_bubble_skin_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_complete_task - 2019.04.24 at 18h 32m 37s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_complete_task" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 14h 46m 01s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pve_confirm - 2019.04.24 at 18h 35m 29s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_pve_confirm" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 14h 47m 02s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pve_confirm - 2019.04.24 at 18h 36m 34s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_pve_confirm" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 14h 50m 36s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_pve_confirm - 2019.04.24 at 18h 38m 12s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_pve_confirm" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 15h 00m 15s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_receive_mail - 2019.04.24 at 18h 39m 45s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_receive_mail" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 15h 02m 23s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_game_over_buy_add_five_item - 2019.04.24 at 19h 08m 00s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 15h 04m 20s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_flyback_HomeCase_test_game_over_buy_add_five_item - 2019.04.24 at 19h 14m 01s.xml">
-      <configuration name="Unittests for test_flyback.HomeCase.test_game_over_buy_add_five_item" configurationId="tests" />
+    <history-entry file="Unittests_for_test_flyback_HomeCase_test_buy_skill_share - 2019.04.25 at 15h 06m 10s.xml">
+      <configuration name="Unittests for test_flyback.HomeCase.test_buy_skill_share" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2806354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28997868" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40816328" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40736842" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32947367" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32967034" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32947367" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32947367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -511,23 +557,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/software/AirtestIDE_2019-01-15_py3_win64/bubble/front.air/front.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/software/python/Lib/genericpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/cases/baseImport.py" />
     <entry file="file://$PROJECT_DIR$/public/tools.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -562,13 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/cv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/cv.py" />
     <entry file="file://$PROJECT_DIR$/cases/test_back.py" />
     <entry file="file://$PROJECT_DIR$/cases/test_home.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -577,34 +600,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="393" column="35" selection-start-line="393" selection-start-column="35" selection-end-line="393" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/api.py" />
     <entry file="file://$PROJECT_DIR$/pages/skill.py" />
     <entry file="file://$PROJECT_DIR$/pages/check_point.py" />
-    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/envs/air/Lib/site-packages/airtest/core/settings.py" />
     <entry file="file://$PROJECT_DIR$/pages/skin.py" />
     <entry file="file://$PROJECT_DIR$/pages/skin_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/skillPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="14" selection-end-line="42" />
         </state>
       </provider>
     </entry>
@@ -624,13 +628,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/public_button.py" />
-    <entry file="file://D:/software/python/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14020">
-          <caret line="714" column="8" selection-start-line="714" selection-start-column="8" selection-end-line="714" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/software/python/Lib/unittest/case.py" />
     <entry file="file://$PROJECT_DIR$/ctrl/wx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -645,13 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/envs/air/Lib/site-packages/airtest/aircv/sift.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/envs/air/Lib/site-packages/airtest/aircv/sift.py" />
     <entry file="file://$PROJECT_DIR$/pages/recharge_list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -694,24 +686,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/homePage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/mail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/check_point_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
@@ -724,18 +702,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cases/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/payCtrl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-            <marker date="1555923735475" expanded="true" signature="196:201" ph="..." />
-            <marker date="1555923735475" expanded="true" signature="196:296" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cases/temp.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -751,13 +717,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/pve_game_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/check_point_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctrl/playCtrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="18" lean-forward="true" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ctrl/shareCtrl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding>
-            <marker date="1556081002059" expanded="true" signature="114:134" ph="..." />
-          </folding>
+        <state relative-caret-position="217">
+          <caret line="28" column="24" selection-end-line="42" />
         </state>
       </provider>
     </entry>
@@ -767,67 +758,81 @@
           <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1556081287214" expanded="true" signature="48:49" ph="..." />
-            <marker date="1556081287214" expanded="true" signature="48:54" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/start.py">
+    <entry file="file://$PROJECT_DIR$/ctrl/payCtrl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        <state relative-caret-position="237">
+          <caret line="19" column="16" lean-forward="true" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cases/bubbleImport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
           <folding>
-            <marker date="1555600915006" expanded="true" signature="97:151" ph="..." />
-            <marker date="1555600915006" expanded="true" signature="171:180" ph="..." />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctrl/skillCtrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/skillPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/basePageImport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="471">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/pve_game_page.py">
+    <entry file="file://$PROJECT_DIR$/pages/public_element.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="447">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cases/bubbleImport.py">
+    <entry file="file://$PROJECT_DIR$/pages/homePage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        <state relative-caret-position="527">
+          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ctrl/playCtrl.py">
+    <entry file="file://$PROJECT_DIR$/ctrl/skinCtrl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1556082201068" expanded="true" signature="1415:1969" ph="..." />
-            <marker date="1556082201068" expanded="true" signature="1472:1481" ph="..." />
-            <marker date="1556082201068" expanded="true" signature="2304:2568" ph="..." />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cases/test_flyback.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="155" column="14" lean-forward="true" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
+        <state relative-caret-position="1587">
+          <caret line="291" column="54" lean-forward="true" selection-start-line="291" selection-start-column="54" selection-end-line="291" selection-end-column="54" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-            <marker date="1556104292715" expanded="true" signature="157:215" ph="..." />
           </folding>
         </state>
       </provider>

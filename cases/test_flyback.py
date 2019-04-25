@@ -2,19 +2,25 @@ from airtest.core.api import *
 from cases.bubbleImport import BubbleBaseImport
 
 
-class HomeCase(BubbleBaseImport):
+class TestHomeCase(BubbleBaseImport):
 
     @classmethod
     def setUpClass(cls):
         pass
 
-    # def setUp(self):
-    #     pass
+    def setUp(self):
+        pass
 
     def test_complete_task(self):
         """领取一次任务奖励"""
-        pass
-        # self.home.task
+        # 打开任务栏
+        touch(self.home.task)
+
+        # 点击领取
+        touch(self.home.task_receive)
+
+        success_title = exists(self.home.task_prize_title)
+        self.assertTrue(success_title)
 
     def test_buy_once_strength(self):
         """购买一次体力"""
@@ -47,12 +53,10 @@ class HomeCase(BubbleBaseImport):
 
     def test_buy_skin(self):
         """购买一次皮肤"""
-        touch(self.home.skin)
-        sleep(1)
-        # 切换至泡泡栏
-        touch(self.skin.bubble_label)
+        self.skin_ctrl.buy_bubble_skin()
 
-        # TODO
+        success_flag = exists(self.pub.share_button)
+        self.assertTrue(success_flag)
 
     def test_buy_flash_sales(self):
         """购买一次限时特惠"""
@@ -76,6 +80,7 @@ class HomeCase(BubbleBaseImport):
 
     def test_pve_confirm(self):
         """完成一次pve闯关"""
+        connect_device("Android")
         # 进入关卡
         self.play_ctrl.in_pve_game()
 
@@ -171,7 +176,18 @@ class HomeCase(BubbleBaseImport):
 
     def test_complete_sign_activity(self):
         """完成一次签到活动"""
-        pass
+        # 领取第7天奖励
+        touch(self.home.login_seven_flag)
+        wait(self.pub.green_confirm, 2)
+        touch(self.pub.green_confirm)
+        share_status = exists(self.pub.share_button)
+        self.assertTrue(share_status)
+
+        # 点击弹框中的确定按钮
+        touch(self.pub.blue_confirm)
+
+        # 关闭登录活动弹层
+        touch(self.pub.close)
 
     def test_jump_platform_recharge(self):
         """金币充值成功"""
@@ -346,7 +362,8 @@ class HomeCase(BubbleBaseImport):
 
         # 判断分享成功
         share_success = self.share_ctrl.is_success_share()
-        self.assertTrue(share_success)
+        wx_share_status = exists(self.home.wx_share_prize_title)
+        self.assertTrue(any([share_success, wx_share_status]))
 
     def test_pvp_settlement_share(self):
         """PVP胜利结算分享"""
@@ -365,22 +382,52 @@ class HomeCase(BubbleBaseImport):
 
     def test_sign_three_day_share(self):
         """签到7天分享"""
-        pass
+        # 领取第7天奖励
+        touch(self.home.login_seven_flag)
+        wait(self.pub.green_confirm, 2)
+        touch(self.pub.green_confirm)
+        share_status = exists(self.pub.share_button)
+        self.assertTrue(share_status)
+
+        # 点击弹框中的确定按钮
+        touch(self.pub.share_button)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
 
     def test_buy_skill_share(self):
         """激活技能分享"""
-        # 打开技能页面
-        touch(self.home.skill)
+        connect_device("Android:///")
+        self.skill_ctrl.active_skill()
 
-        #
+        # 点击分享
+        wait(self.pub.share_button, 10)
+        touch(self.pub.share_button)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
 
     def test_buy_bubble_skin_share(self):
         """购买泡泡皮肤分享"""
-        pass
+        self.skin_ctrl.buy_bubble_skin()
 
-    def test_pvp_egg_share(self):
-        """PVP彩蛋分享"""
-        pass
+        # 点击分享
+        touch(self.pub.share_button)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
 
     def test_pve_pass_share(self):
         """PVE过关分享"""
@@ -389,6 +436,21 @@ class HomeCase(BubbleBaseImport):
 
         # 点击炫耀
         touch(self.ck.flaunt)
+
+        # 微信分享
+        self.share_ctrl.wx_share()
+
+        # 判断分享成功
+        share_success = self.share_ctrl.is_success_share()
+        self.assertTrue(share_success)
+
+    def test_checkpoint_share(self):
+        """关卡页面分享"""
+        # 点击进入关卡页面
+        touch(self.home.plot_mode)
+
+        # 点击分享
+        touch(self.pub.share_button)
 
         # 微信分享
         self.share_ctrl.wx_share()

@@ -5,6 +5,8 @@ from airtest.core.error import TargetNotFoundError
 from ctrl.payCtrl import PayCtrl
 from ctrl.playCtrl import PlayCtrl
 from ctrl.shareCtrl import ShareCtrl
+from ctrl.skinCtrl import SkinCtrl
+from ctrl.skillCtrl import SkillCtrl
 
 
 class BubbleBaseImport(TestCase, BubbleBasePage):
@@ -13,6 +15,8 @@ class BubbleBaseImport(TestCase, BubbleBasePage):
     pay_ctrl = PayCtrl()
     play_ctrl = PlayCtrl()
     share_ctrl = ShareCtrl()
+    skin_ctrl = SkinCtrl()
+    skill_ctrl = SkillCtrl()
 
     @classmethod
     def setUpClass(cls):

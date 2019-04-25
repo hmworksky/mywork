@@ -16,6 +16,7 @@ from pages.pvp_gaming import PvpGamingPage
 from pages.pvp_game_over import PvpGameOverPage
 from pages.weixin import WxPage
 from pages.mail import MailPage
+from pages.public_element import PublicElementPage
 
 
 class BubbleBasePage:
@@ -36,3 +37,4 @@ class BubbleBasePage:
     wx = WxPage()
     admin = AdminCtrl()
     mail = MailPage()
+    pub = PublicElementPage()

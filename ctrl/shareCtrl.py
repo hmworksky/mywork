@@ -29,7 +29,8 @@ class ShareCtrl(BubbleBasePage):
     def is_success_share(self):
         """微信是否分享成功"""
         success_flag = exists(self.home.share_success_doc)
-        return success_flag
+        success_title = exists(self.pub.prize_title)
+        return any([success_flag, success_title])
 
     def wx_friend_share(self):
         """微信朋友圈分享"""
