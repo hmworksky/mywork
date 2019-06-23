@@ -2,21 +2,21 @@
   <div class="app-container">
     <div class="filter-container">
 
-      <el-input v-model="listQuery.title" placeholder="游戏名" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter"/>
+      <el-input v-model="listQuery.name" placeholder="游戏名" style="width: 200px;" class="filter-item" @keyup.enter.native="handleFilter"/>
 
       <el-select v-model="listQuery.env" placeholder="环境" clearable style="width: 90px" class="filter-item">
         <el-option v-for="item in envOptions" :key="item" :label="item" :value="item"/>
       </el-select>
 
-      <el-select v-model="listQuery.type" placeholder="类型" clearable class="filter-item" style="width: 130px">
-        <el-option v-for="item in calendarTypeOptions" :key="item.key" :label="item.display_name+'('+item.key+')'" :value="item.key"/>
+      <el-select v-model="listQuery.game_type" placeholder="类型" clearable class="filter-item" style="width: 130px">
+        <el-option v-for="item in calendarTypeOptions" :key="item.key" :label="item.display_name" :value="item.key"/>
       </el-select>
 
       <el-select v-model="listQuery.status" placeholder="状态" clearable class="filter-item" style="width: 130px">
-        <el-option v-for="item in statusOptions" :key="item" :label="item" :value="item"/>
+        <el-option v-for="item in statusOptions" :key="item.key" :label="item.display_name" :value="item.key"/>
       </el-select>
 
-      <el-select v-model="listQuery.sort" style="width: 140px" class="filter-item" @change="handleFilter">
+      <el-select v-model="listQuery.ordering" style="width: 140px" class="filter-item" @change="handleFilter">
         <el-option v-for="item in sortOptions" :key="item.key" :label="item.label" :value="item.key"/>
       </el-select>
 
@@ -49,7 +49,7 @@
       <!--</template>-->
       <!--</el-table-column>-->
 
-      <el-table-column label="游戏名称" min-width="150px" align="center">
+      <el-table-column label="游戏名称" min-width="50px" align="center">
         <template slot-scope="scope">
           <span class="link-type" @click="handleUpdate(scope.row)">{{ scope.row.name }}</span>
           <el-tag>{{ scope.row.game_type | typeFilter }}</el-tag>
@@ -65,7 +65,7 @@
 
       <el-table-column label="环境" width="80px">
         <template slot-scope="scope">
-          <span>{{ scope.row.environment }}</span>
+          <span>{{ scope.row.env }}</span>
         </template>
       </el-table-column>
 
@@ -88,7 +88,7 @@
           </el-button>
           <!--<el-button v-if="scope.row.status!='draft'" size="mini" @click="handleModifyStatus(scope.row,'draft')" plain disabled>{{ $t('table.draft') }}-->
           <!--</el-button>-->
-          <el-button v-if="scope.row.status!='deleted'" size="mini" type="danger" @click="handleModifyStatus(scope.row,'deleted')">{{ $t('table.delete') }}
+          <el-button v-if="scope.row.status!='deleted'" size="mini" type="danger" @click="deleteGameInfo(scope.row.id)">{{ $t('table.delete') }}
           </el-button>
         </template>
       </el-table-column>
@@ -98,23 +98,25 @@
 
     <el-dialog :title="textMap[dialogStatus]" :visible.sync="dialogFormVisible">
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="70px" style="width: 400px; margin-left:50px;">
-        <el-form-item :label="$t('table.type')" prop="type">
-          <el-select v-model="temp.type" class="filter-item" placeholder="Please select">
+
+        <el-form-item label="游戏类型" prop="game_type">
+          <el-select v-model="temp.game_type" class="filter-item" placeholder="Please select">
             <el-option v-for="item in calendarTypeOptions" :key="item.key" :label="item.display_name" :value="item.key"/>
           </el-select>
         </el-form-item>
 
-        <!--<el-form-item :label="$t('table.date')" prop="timestamp">-->
-        <!--<el-date-picker v-model="temp.timestamp" type="datetime" placeholder="Please pick a date"/>-->
-        <!--</el-form-item>-->
 
-        <el-form-item label="游戏名" prop="title">
-          <el-input v-model="temp.title"/>
+        <el-form-item label="游戏名" prop="name">
+          <el-input v-model="temp.name"/>
+        </el-form-item>
+
+        <el-form-item label="游戏ID" prop="gameId">
+          <el-input v-model="temp.game_num"/>
         </el-form-item>
 
         <el-form-item label="状态">
           <el-select v-model="temp.status" class="filter-item" placeholder="Please select">
-            <el-option v-for="item in statusOptions" :key="item" :label="item" :value="item"/>
+            <el-option v-for="item in statusOptions" :key="item.key" :label="item.display_name" :value="item.key"/>
           </el-select>
         </el-form-item>
 
@@ -129,12 +131,12 @@
         <!--</el-form-item>-->
 
         <el-form-item label="描述">
-          <el-input :autosize="{ minRows: 2, maxRows: 4}" v-model="temp.remark" type="textarea" placeholder="Please input"/>
+          <el-input :autosize="{ minRows: 2, maxRows: 4}" v-model="temp.memo" type="textarea" placeholder="Please input"/>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
-        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ $t('table.confirm') }}</el-button>
+        <el-button type="primary" @click="createData">{{ $t('table.confirm') }}</el-button>
       </div>
     </el-dialog>
 
@@ -156,6 +158,7 @@ import { GameInfoList, fetchPv, createArticle, updateArticle } from '@/api/artic
 import waves from '@/directive/waves' // Waves directive
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
+import { gameInfoList, deleteGame, createGame, updateGame } from '@/api/article'
 import axios from 'axios'
 
 const calendarTypeOptions = [
@@ -174,11 +177,11 @@ const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) => {
 
 
 const statusOptions = [
-  { key: '0', display_name: 'prd' },
-  { key: '1', display_name: 'dev' },
-  { key: '2', display_name: 'test' },
-  { key: '3', display_name: 'pre' },
-  { key: '4', display_name: 'published' },
+  { key: 0, display_name: 'prd' },
+  { key: 1, display_name: 'dev' },
+  { key: 2, display_name: 'test' },
+  { key: 3, display_name: 'pre' },
+  { key: 4, display_name: 'published' },
 ]
 
 // arr to obj ,such as { CN : "China", US : "USA" }
@@ -186,6 +189,7 @@ const gameStatusKeyValue = statusOptions.reduce((acc, cur) => {
   acc[cur.key] = cur.display_name
   return acc
 }, {})
+
 
 export default {
   name: 'GameList',
@@ -208,27 +212,29 @@ export default {
       listQuery: {
         page: 1,
         limit: 20,
-        environment: undefined,
+        env: undefined,
         name: undefined,
         game_type: undefined,
-        sort: '+id',
+        ordering: 'id',
         status: undefined
       },
       importanceOptions: [1, 2, 3],
       calendarTypeOptions,
       sortOptions: [{ label: '升序', key: '+id' }, { label: '降序', key: '-id' }],
-      statusOptions: ['published', 'prd', 'dev', 'test', 'pre'],
+      // statusOptions: [
+      //   {label: '需求评审', key: '0'},{label: '开发中', key: '1'},{label: '测试中', key: '2'},{label: '预发', key: '3'},{label: '生产', key: '4'},
+      // ],
+      statusOptions,
       envOptions: ['dev', 'test', 'prd'],
       showChannel: false,
       temp: {
         id: undefined,
-        importance: 1,
-        remark: '',
-        timestamp: new Date(),
+        memo: undefined,
         name: '',
         game_type: '',
-        status: 'published',
-        environment: 'TEST'
+        status: undefined,
+        env: 'TEST',
+        game_num: ''
       },
       dialogFormVisible: false,
       dialogStatus: '',
@@ -248,25 +254,41 @@ export default {
   },
   created() {
     this.getList()
+    console.log(this.list)
   },
   methods: {
 
-    getList() {
+    getList(params) {
       this.listLoading = true
-      axios.get('http://127.0.0.1:8000/game/').then(response => {
+      axios.get('http://127.0.0.1:8000/game/', {params}).then(response => {
         console.log(response)
         const items = response.data.results
         this.list = items.map(v => {
           this.$set(v, 'edit', false) // https://vuejs.org/v2/guide/reactivity.html
-          v.originalTitle = v.title //  will be used when user click the cancel botton
+          v.name = v.name //  will be used when user click the cancel botton
+          console.log(v)
           return v
         })
         this.listLoading = false
       }).catch(error => console.log(error))
     },
+    deleteGameInfo(id) {
+      this.listLoading = true
+      deleteGame(id).then(response => {
+        console.log("first")
+        this.listLoading = false
+        this.getList(this.listQuery)
+        this.$message({
+        message: '操作成功',
+        type: 'success'
+      })
+      })
+
+    },
     handleFilter() {
       this.listQuery.page = 1
-      this.getList()
+      console.log("filter")
+      this.getList(this.listQuery)
     },
     handlePublish() {
       this.listQuery.publishStatus = !this.listQuery.publishStatus
@@ -279,6 +301,10 @@ export default {
         type: 'success'
       })
       row.status = status
+      updateGame(row.id, {'status': status}).then(response => {
+        this.getList()
+      }).catch(error => console.log(error))
+
     },
     sortChange(data) {
       const { prop, order } = data
@@ -288,21 +314,21 @@ export default {
     },
     sortByID(order) {
       if (order === 'ascending') {
-        this.listQuery.sort = '+id'
+        this.listQuery.ordering = 'id'
       } else {
-        this.listQuery.sort = '-id'
+        this.listQuery.ordering = '-id'
       }
       this.handleFilter()
     },
     resetTemp() {
       this.temp = {
         id: undefined,
-        importance: 1,
-        remark: '',
-        timestamp: new Date(),
-        title: '',
-        status: 'published',
-        type: ''
+        memo: undefined,
+        name: '',
+        game_type: '',
+        status: undefined,
+        env: 'TEST',
+        game_num: ''
       }
     },
     handleCreate() {
@@ -314,26 +340,17 @@ export default {
       })
     },
     createData() {
-      this.$refs['dataForm'].validate((valid) => {
-        if (valid) {
-          this.temp.id = parseInt(Math.random() * 100) + 1024 // mock a id
-          this.temp.author = 'vue-element-admin'
-          createArticle(this.temp).then(() => {
-            this.list.unshift(this.temp)
-            this.dialogFormVisible = false
-            this.$notify({
-              title: '成功',
-              message: '创建成功',
-              type: 'success',
-              duration: 2000
-            })
-          })
-        }
-      })
+      console.log("###")
+      console.log(this.temp)
+      const tempData = Object.assign({}, this.temp)
+      createGame(tempData).then(response => {
+        this.getList()
+      }).catch(error => console.log(error))
     },
     handleUpdate(row) {
       this.temp = Object.assign({}, row) // copy obj
-      this.temp.timestamp = new Date(this.temp.timestamp)
+      this.temp.game_type = row.game_type
+      console.log("###", this.temp.game_type)
       this.dialogStatus = 'update'
       this.dialogFormVisible = true
       this.$nextTick(() => {
@@ -383,8 +400,8 @@ export default {
     handleDownload() {
       this.downloadLoading = true
       import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['timestamp', 'title', 'type', 'importance', 'status']
-        const filterVal = ['timestamp', 'title', 'type', 'importance', 'status']
+        const tHeader = ['序号', '游戏名称', 'gameId', '环境', '当前状态']
+        const filterVal = ['id', 'name', 'game_num', 'env', 'status']
         const data = this.formatJson(filterVal, this.list)
         excel.export_json_to_excel({
           header: tHeader,

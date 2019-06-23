@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import qs from 'qs'
 
 export function fetchList(query) {
   return request({
@@ -47,6 +48,32 @@ export function gameInfoList(query) {
     headers: {
       'Content-Type' : 'application/json'
     },
-    params: {query}
+    params: query
+  })
+}
+
+
+export function deleteGame(id)  {
+  return request({
+    url: '/game/' + id,
+    method: 'delete'
+  })
+}
+
+// 新增或更新游戏
+export function createGame(data)  {
+  return request({
+    url: '/game/',
+    method: 'post',
+    data
+  })
+}
+
+
+export function updateGame(id, data)  {
+  return request({
+    url: '/game/'+ id + '/',
+    method: 'put',
+    data
   })
 }
