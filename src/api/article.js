@@ -43,7 +43,7 @@ export function updateArticle(data) {
 
 export function gameInfoList(query) {
   return request({
-    url: '/game',
+    url: '/auto/game/',
     method: 'get',
     headers: {
       'Content-Type' : 'application/json'
@@ -55,7 +55,7 @@ export function gameInfoList(query) {
 
 export function deleteGame(id)  {
   return request({
-    url: '/game/' + id,
+    url: '/auto/game/' + id,
     method: 'delete'
   })
 }
@@ -63,7 +63,7 @@ export function deleteGame(id)  {
 // 新增或更新游戏
 export function createGame(data)  {
   return request({
-    url: '/game/',
+    url: '/auto/game/',
     method: 'post',
     data
   })
@@ -71,8 +71,50 @@ export function createGame(data)  {
 
 
 export function updateGame(id, data)  {
+  console.log("###222",id, data)
   return request({
-    url: '/game/'+ id + '/',
+    url: '/auto/game/'+ id + '/',
+    method: 'put',
+    data
+  })
+}
+
+
+export function getInterfaceInfoList(query) {
+  return request({
+    url: '/auto/interface/info/',
+    method: 'get',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    params: query
+  })
+}
+
+
+
+export function deleteInterfaceInfo(id)  {
+  return request({
+    url: '/auto/interface/info/' + id,
+    method: 'delete'
+  })
+}
+
+// 新增或更新游戏
+export function createInterfaceInfo(data)  {
+  console.error("###111", data)
+  return request({
+    url: '/auto/interface/info/',
+    method: 'post',
+    data
+  })
+}
+
+
+export function updateInterfaceInfo(id, data)  {
+  console.error("###222",id, data)
+  return request({
+    url: '/auto/interface/info/'+ id + '/',
     method: 'put',
     data
   })

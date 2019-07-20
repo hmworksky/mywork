@@ -84,7 +84,7 @@
       <el-table-column :label="$t('table.actions')" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">{{ $t('table.edit') }}</el-button>
-          <el-button v-if="scope.row.status!='published'" size="mini" type="success" @click="handleModifyStatus(scope.row,'published')">{{ $t('table.publish') }}
+          <el-button v-if="scope.row.status!='published'" size="mini" type="success" @click="handleModifyStatus(scope.row, 4)">{{ $t('table.publish') }}
           </el-button>
           <!--<el-button v-if="scope.row.status!='draft'" size="mini" @click="handleModifyStatus(scope.row,'draft')" plain disabled>{{ $t('table.draft') }}-->
           <!--</el-button>-->
@@ -136,7 +136,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">{{ $t('table.cancel') }}</el-button>
-        <el-button type="primary" @click="createData">{{ $t('table.confirm') }}</el-button>
+        <el-button type="primary" @click="dialogStatus==='create'?createData():updateData()">{{ $t('table.confirm') }}</el-button>
       </div>
     </el-dialog>
 
@@ -260,7 +260,7 @@ export default {
 
     getList(params) {
       this.listLoading = true
-      axios.get('http://127.0.0.1:8000/game/', {params}).then(response => {
+      axios.get('http://127.0.0.1:8000/auto/game/', {params}).then(response => {
         console.log(response)
         const items = response.data.results
         this.list = items.map(v => {
@@ -296,13 +296,15 @@ export default {
       this.getList()
     },
     handleModifyStatus(row, status) {
-      this.$message({
+
+      row.status = status
+      console.log(row)
+      updateGame(row.id, row).then(response => {
+        this.getList()
+        this.$message({
         message: '操作成功',
         type: 'success'
       })
-      row.status = status
-      updateGame(row.id, {'status': status}).then(response => {
-        this.getList()
       }).catch(error => console.log(error))
 
     },
@@ -361,23 +363,20 @@ export default {
       this.$refs['dataForm'].validate((valid) => {
         if (valid) {
           const tempData = Object.assign({}, this.temp)
-          tempData.timestamp = +new Date(tempData.timestamp) // change Thu Nov 30 2017 16:41:05 GMT+0800 (CST) to 1512031311464
-          updateArticle(tempData).then(() => {
-            for (const v of this.list) {
-              if (v.id === this.temp.id) {
-                const index = this.list.indexOf(v)
-                this.list.splice(index, 1, this.temp)
-                break
-              }
-            }
-            this.dialogFormVisible = false
-            this.$notify({
-              title: '成功',
-              message: '更新成功',
-              type: 'success',
-              duration: 2000
-            })
+          tempData.status = 4
+          updateGame(tempData.id, tempData).then(response => {
+          this.getList()
+          this.dialogFormVisible = false
+          this.$notify({
+            title: '成功',
+            message: '更新成功',
+            type: 'success',
+            duration: 2000
           })
+        }).catch(error => console.log(error))
+
+
+
         }
       })
     },
