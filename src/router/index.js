@@ -96,6 +96,12 @@ export const constantRouterMap = [
         meta: {title: '接口列表', icon: 'list', noCache: true, affix: true}
       },
       {
+        path: 'interface/detail',
+        component: () => import('@/views/game/components/interfaceDetail'),
+        name: 'interfaceDetail',
+        meta: {title: '接口详情', icon: 'list', noCache: true, affix: true}
+      },
+      {
         path: 'branch/list',
         component: () => import('@/views/game/components/branchList'),
         name: 'branchList',

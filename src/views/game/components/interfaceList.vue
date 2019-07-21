@@ -64,7 +64,7 @@
 
       <el-table-column label="socketIO路由" min-width="20px" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.route }}</span>
+          <span v-text="scope.row.route?scope.row.route:''"></span>
         </template>
       </el-table-column>
 
@@ -249,6 +249,7 @@ export default {
   created() {
     this.getList()
     console.log(this.list)
+    this.dialogFormVisible = false
   },
 
   methods: {
